@@ -10,4 +10,7 @@ int main() {
     proxy_address.sin_addr.s_addr = INADDR_ANY;
     int bind_status = bind(server_fd, (struct sockaddr*)&proxy_address, sizeof(proxy_address));
     std::cout << bind_status << "\n";
+    int listen_status = listen(server_fd, 10);
+    std::cout << listen_status << "\n";
+    
 }
