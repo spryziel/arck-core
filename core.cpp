@@ -1,10 +1,6 @@
 #include <iostream>
+#include <sys/socket.h>
 int main() {
-    int* heap_leash = new int;
-    *heap_leash = 8080;
-    std::cout << *heap_leash << "\n";
-    std::cout << heap_leash << "\n";
-    std::cout << &heap_leash << "\n";
-    delete heap_leash;
-    std::cout << *heap_leash << "\n";
+    int server_fd = socket(AF_INET, SOCK_STREAM, 0);
+    std::cout << server_fd << "\n";
 }
